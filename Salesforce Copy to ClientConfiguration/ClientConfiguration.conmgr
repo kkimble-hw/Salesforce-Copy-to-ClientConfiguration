@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ClientConfiguration"
+  DTS:DTSID="{D5FC5853-4686-48D6-A259-C6ADF140781A}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::ClientConfiguration_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::ClientConfiguration_Password]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ClientConfiguration_ServerName]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::ClientConfiguration_UserName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=azw-das-db01.database.windows.net;User ID=D-SQL-MIADMIN;Initial Catalog=ClientConfiguration;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Salesforce Copy to ClientConfiguration-{D5FC5853-4686-48D6-A259-C6ADF140781A}azw-das-db01.database.windows.net.ClientConf;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKQJczqeCrUSZurgflqyz3gAAAAACAAAAAAADZgAAwAAAABAAAAD7KBWHgMC5fnamEjYeV8O+AAAAAASAAACgAAAAEAAAALfzIhtwiu6/MbhQWFCI01h4AAAAyEQQiFD+Yq/AzS15NoJQK/q2U+WXQDlk02Hc9sPc8qtCnjzmV/u49Sgkxwl4G65sA+0yxpbg6UEjPSZMiuixTAIRq9ohTNPU5G5aTUKvmrZMSjw/DqusOLR3piUbyTn50Io4iY+xmsvQGD0AIjeDujk/iKOIdQPPFAAAAHWy467sFSFq2D5WPd/eu8w93vQd</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

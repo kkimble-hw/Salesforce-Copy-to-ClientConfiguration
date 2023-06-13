@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Salesforce Source"
+  DTS:DTSID="{FB318411-95C9-49C8-9EBE-3D21CA932511}"
+  DTS:CreationName="SFORCE">
+  <DTS:PropertyExpression
+    DTS:Name="ServerPassword">@[$Project::SalesforceSource_ServerPassword]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerUser">@[$Project::SalesforceSource_ServerUser]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <ConnectionManager
+      ConnectionString="ServerUser=miuser@healthwise.org;ServerTimeout=60;ServerUrl=https://login.salesforce.com/services/Soap/u/54.0;RetainSameConnection=True;OrganizationId=;PortalId=;AllowDuplicatesSave=False;AllowFieldTruncation=False;CommitAllOrNone=False;AssignmentRule=;ProxyHost=;ProxyPort=0;ProxyUser=;Retry=0;RetryPause=30;RetryError=;"
+      ConnectByProxy="False">
+      <ServerPassword
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKQJczqeCrUSZurgflqyz3gAAAAACAAAAAAADZgAAwAAAABAAAAAquVX5QOyd93t1QBGMX0k3AAAAAASAAACgAAAAEAAAAM49h8LIRnh8lmO33Q3ikACIAAAANjWt5h6aaBwRsFuN0FTzwBwLCtz9wiCRC8D/s5uLdMkyuT+DY1LpSt0lDf78cE8wcx2JdLuyxbg0bYrF6SWLMd2y1CgNuT90ArtyQeXTLiDAc6JMeblGfXHP/QqsnE6MmDyFJeac/7ZDTJOmbQtorxH65BDhxvWAkLSnvUuRAmr4MlB3XqUnXRQAAABKVMWd0NZSxK8qHDfxG16TqUIBsA==</ServerPassword>
+    </ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
