@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{81039E47-0610-44CB-907B-18A55B226471}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{D8ED5CAF-66C5-4968-B2E8-6373576E1BCF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1430,19 +1430,22 @@ where [refTable].[Id] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how to access the service."
                   name="InputType"
-                  typeConverter="CozyRoc.SqlServer.SSIS.SforceSource+InputTypes">0</property>
+                  typeConverter="CozyRoc.SqlServer.SSIS.SforceSource+InputTypes">1</property>
                 <property
                   dataType="System.String"
                   description="Salesforce object."
                   expressionType="Notify"
                   name="Object"
-                  typeConverter="CozyRoc.SqlServer.SSIS.TableEditor">Asset</property>
+                  typeConverter="CozyRoc.SqlServer.SSIS.TableEditor"></property>
                 <property
                   dataType="System.String"
                   description="SOQL statement."
                   expressionType="Notify"
                   name="Statement"
-                  UITypeEditor="CozyRoc.SqlServer.SSIS.TextDialogEditor"></property>
+                  UITypeEditor="CozyRoc.SqlServer.SSIS.TextDialogEditor">Select 
+Id, 
+AccountID
+from Asset</property>
                 <property
                   dataType="System.Boolean"
                   description="Specifies to include deleted records."
@@ -1477,227 +1480,30 @@ where [refTable].[Id] = ?</property>
                     <outputColumn
                       refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]"
                       dataType="wstr"
-                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Id]"
                       length="18"
                       lineageId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]"
-                      name="Id"
-                      truncationRowDisposition="FailComponent" />
+                      name="Id" />
                     <outputColumn
                       refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].Columns[AccountId]"
                       dataType="wstr"
-                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[AccountId]"
                       length="18"
                       lineageId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].Columns[AccountId]"
-                      name="AccountId"
-                      truncationRowDisposition="FailComponent" />
+                      name="AccountId" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[AccountId]"
-                      dataType="wstr"
-                      length="18"
-                      name="AccountId" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset_ID__c]"
-                      dataType="wstr"
-                      length="30"
-                      name="Asset_ID__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset_Partner__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Asset_Partner__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset_Type__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Asset_Type__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Channel__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Channel__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[ContactId]"
-                      dataType="wstr"
-                      length="18"
-                      name="ContactId" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Contract_1__c]"
-                      dataType="wstr"
-                      length="18"
-                      name="Contract_1__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Contract_Amendment1__c]"
-                      dataType="wstr"
-                      length="18"
-                      name="Contract_Amendment1__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
-                      dataType="wstr"
-                      length="18"
-                      name="CreatedById" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Description]"
-                      dataType="nText"
-                      name="Description" />
                     <externalMetadataColumn
                       refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Id]"
                       dataType="wstr"
                       length="18"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[InstallDate]"
-                      dataType="dbDate"
-                      name="InstallDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Inverse_Related_Acct_Type__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="Inverse_Related_Acct_Type__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[IsCompetitorProduct]"
-                      dataType="bool"
-                      name="IsCompetitorProduct" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
-                      dataType="bool"
-                      name="IsDeleted" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
+                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[AccountId]"
                       dataType="wstr"
                       length="18"
-                      name="LastModifiedById" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
-                      name="LastModifiedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastReferencedDate]"
-                      dataType="dbTimeStamp"
-                      name="LastReferencedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastViewedDate]"
-                      dataType="dbTimeStamp"
-                      name="LastViewedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[License_Type__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="License_Type__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="255"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[On_Platform__c]"
-                      dataType="bool"
-                      name="On_Platform__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Organization_Archetype__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Organization_Archetype__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Package_Level__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Package_Level__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[ParentId]"
-                      dataType="wstr"
-                      length="18"
-                      name="ParentId" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Price]"
-                      dataType="numeric"
-                      name="Price"
-                      precision="18"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Product__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product2Id]"
-                      dataType="wstr"
-                      length="18"
-                      name="Product2Id" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[PurchaseDate]"
-                      dataType="dbDate"
-                      name="PurchaseDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Quantity]"
-                      dataType="numeric"
-                      name="Quantity"
-                      precision="12"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[RecordTypeId]"
-                      dataType="wstr"
-                      length="18"
-                      name="RecordTypeId" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Related_Acct_Type__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Related_Acct_Type__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[RootAssetId]"
-                      dataType="wstr"
-                      length="18"
-                      name="RootAssetId" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SerialNumber]"
-                      dataType="wstr"
-                      length="80"
-                      name="SerialNumber" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Status]"
-                      dataType="wstr"
-                      length="255"
-                      name="Status" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Status__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Status__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[StockKeepingUnit]"
-                      dataType="wstr"
-                      length="180"
-                      name="StockKeepingUnit" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
-                      name="SystemModstamp" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[UsageEndDate]"
-                      dataType="dbDate"
-                      name="UsageEndDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Valid_From__c]"
-                      dataType="dbDate"
-                      name="Valid_From__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Valid_To__c]"
-                      dataType="dbDate"
-                      name="Valid_To__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Asset\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[VAR_Acct__c]"
-                      dataType="wstr"
-                      length="18"
-                      name="VAR_Acct__c" />
+                      name="AccountId" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -2627,19 +2433,26 @@ where [refTable].[Id] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how to access the service."
                   name="InputType"
-                  typeConverter="CozyRoc.SqlServer.SSIS.SforceSource+InputTypes">0</property>
+                  typeConverter="CozyRoc.SqlServer.SSIS.SforceSource+InputTypes">1</property>
                 <property
                   dataType="System.String"
                   description="Salesforce object."
                   expressionType="Notify"
                   name="Object"
-                  typeConverter="CozyRoc.SqlServer.SSIS.TableEditor">Configuration__c</property>
+                  typeConverter="CozyRoc.SqlServer.SSIS.TableEditor"></property>
                 <property
                   dataType="System.String"
                   description="SOQL statement."
                   expressionType="Notify"
                   name="Statement"
-                  UITypeEditor="CozyRoc.SqlServer.SSIS.TextDialogEditor"></property>
+                  UITypeEditor="CozyRoc.SqlServer.SSIS.TextDialogEditor">Select 
+Id,
+SKU_Text__c,
+Status__c,
+Client_Token__c,
+asset__c
+From Configuration__c
+WHERE Client_Token__c != null</property>
                 <property
                   dataType="System.Boolean"
                   description="Specifies to include deleted records."
@@ -2672,241 +2485,68 @@ where [refTable].[Id] = ?</property>
                   name="Salesforce Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Asset__c]"
-                      dataType="wstr"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset__c]"
-                      length="18"
-                      lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Asset__c]"
-                      name="Asset__c"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Client_Token__c]"
-                      dataType="wstr"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Client_Token__c]"
-                      length="40"
-                      lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Client_Token__c]"
-                      name="Client_Token__c"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]"
                       dataType="wstr"
-                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Id]"
                       length="18"
                       lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Id]"
-                      name="Id"
-                      truncationRowDisposition="FailComponent" />
+                      name="Id" />
                     <outputColumn
                       refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[SKU_Text__c]"
                       dataType="wstr"
-                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SKU_Text__c]"
                       length="1300"
                       lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[SKU_Text__c]"
-                      name="SKU_Text__c"
-                      truncationRowDisposition="FailComponent" />
+                      name="SKU_Text__c" />
                     <outputColumn
                       refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Status__c]"
                       dataType="wstr"
-                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Status__c]"
                       length="255"
                       lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Status__c]"
-                      name="Status__c"
-                      truncationRowDisposition="FailComponent" />
+                      name="Status__c" />
+                    <outputColumn
+                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Client_Token__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Client_Token__c]"
+                      length="40"
+                      lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Client_Token__c]"
+                      name="Client_Token__c" />
+                    <outputColumn
+                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Asset__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset__c]"
+                      length="18"
+                      lineageId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].Columns[Asset__c]"
+                      name="Asset__c" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Account__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="Account__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset__c]"
-                      dataType="wstr"
-                      length="18"
-                      name="Asset__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Client_Token__c]"
-                      dataType="wstr"
-                      length="40"
-                      name="Client_Token__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Configuration_Record_Type_ID__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="Configuration_Record_Type_ID__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedById]"
-                      dataType="wstr"
-                      length="18"
-                      name="CreatedById" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Custom_Details__c]"
-                      dataType="nText"
-                      name="Custom_Details__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Custom_Friendly_Name__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Custom_Friendly_Name__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Deactivation_Date__c]"
-                      dataType="dbDate"
-                      name="Deactivation_Date__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Delivery__c]"
-                      dataType="wstr"
-                      length="55"
-                      name="Delivery__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Email__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Email__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Go_Live_Date__c]"
-                      dataType="dbDate"
-                      name="Go_Live_Date__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[HW_Notes__c]"
-                      dataType="nText"
-                      name="HW_Notes__c" />
                     <externalMetadataColumn
                       refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Id]"
                       dataType="wstr"
                       length="18"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[IsDeleted]"
-                      dataType="bool"
-                      name="IsDeleted" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Knowledgebase_Product_Options__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Knowledgebase_Product_Options__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Knowledgebase_SKU__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Knowledgebase_SKU__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Knowledgebase_SKU_Description__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Knowledgebase_SKU_Description__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastActivityDate]"
-                      dataType="dbDate"
-                      name="LastActivityDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedById]"
-                      dataType="wstr"
-                      length="18"
-                      name="LastModifiedById" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastModifiedDate]"
-                      dataType="dbTimeStamp"
-                      name="LastModifiedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastReferencedDate]"
-                      dataType="dbTimeStamp"
-                      name="LastReferencedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[LastViewedDate]"
-                      dataType="dbTimeStamp"
-                      name="LastViewedDate" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="80"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Print_SKU__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Print_SKU__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Print_SKU_Description__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Print_SKU_Description__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product_Delivery_ID__c]"
-                      dataType="wstr"
-                      length="100"
-                      name="Product_Delivery_ID__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product_Line__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Product_Line__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product_Option__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Product_Option__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product_Options_Text__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="Product_Options_Text__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Product_Type__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Product_Type__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[RecordTypeId]"
-                      dataType="wstr"
-                      length="18"
-                      name="RecordTypeId" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Reporting_Solution__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="Reporting_Solution__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SKU__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="SKU__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SKU_Description_Text__c]"
-                      dataType="wstr"
-                      length="1300"
-                      name="SKU_Description_Text__c" />
-                    <externalMetadataColumn
                       refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SKU_Text__c]"
                       dataType="wstr"
                       length="1300"
                       name="SKU_Text__c" />
-                    <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SKUDescription__c]"
-                      dataType="wstr"
-                      length="255"
-                      name="SKUDescription__c" />
                     <externalMetadataColumn
                       refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Status__c]"
                       dataType="wstr"
                       length="255"
                       name="Status__c" />
                     <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[SystemModstamp]"
-                      dataType="dbTimeStamp"
-                      name="SystemModstamp" />
+                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Client_Token__c]"
+                      dataType="wstr"
+                      length="40"
+                      name="Client_Token__c" />
                     <externalMetadataColumn
-                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[VAR_Modules__c]"
-                      dataType="nText"
-                      name="VAR_Modules__c" />
+                      refId="Package\dft Configuration_c\Salesforce Source.Outputs[Salesforce Source Output].ExternalColumns[Asset__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Asset__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -3444,28 +3084,28 @@ WHERE Id = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\dft Asset\Salesforce Source"
-          TopLeft="423.48,32" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\dft Asset\Data Conversion"
-          TopLeft="426.68,121.95" />
+          Size="114.4,41.6"
+          Id="Package\dft Asset\INSERT"
+          TopLeft="164.444444444444,301.85" />
         <NodeLayout
           Size="188,41.6"
           Id="Package\dft Asset\Check for New Records"
           TopLeft="410.28,211.9" />
         <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\dft Asset\UPDATE"
+          TopLeft="445.88,391.8" />
+        <NodeLayout
           Size="215.2,41.6"
           Id="Package\dft Asset\Check for Changes to Record"
           TopLeft="396.68,301.85" />
         <NodeLayout
-          Size="116.8,41.6"
-          Id="Package\dft Asset\UPDATE"
-          TopLeft="445.88,391.8" />
+          Size="155.2,41.6"
+          Id="Package\dft Asset\Data Conversion"
+          TopLeft="426.68,121.95" />
         <EdgeLayout
-          Id="Package\dft Asset.Paths[Salesforce Source Output]"
-          TopLeft="504.28,73.6">
+          Id="Package\dft Asset.Paths[Lookup No Match Output1]"
+          TopLeft="504.28,343.45">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3482,29 +3122,45 @@ WHERE Id = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,14.6203125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\dft Asset.Paths[Data Conversion Output]"
-          TopLeft="504.28,163.55">
+          Id="Package\dft Asset.Paths[Lookup No Match Output]"
+          TopLeft="474.28,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.35"
+              EndConnector="-252.635555555556,48.35"
               Start="0,0"
-              End="0,40.85">
+              End="-252.635555555556,40.85">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.85" />
+                    End="0,15.5848101265823" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5848101265823"
+                    Point2="0,19.5848101265823"
+                    Point3="-4,19.5848101265823" />
+                  <mssgle:LineSegment
+                    End="-248.635555555556,19.5848101265823" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-248.635555555556,19.5848101265823"
+                    Point2="-252.635555555556,19.5848101265823"
+                    Point3="-252.635555555556,23.5848101265823" />
+                  <mssgle:LineSegment
+                    End="-252.635555555556,40.85" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-182.124164496528,24.5848101265823,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3543,49 +3199,9 @@ WHERE Id = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="114.4,41.6"
-          Id="Package\dft Asset\INSERT"
-          TopLeft="164.444444444444,301.85" />
         <EdgeLayout
-          Id="Package\dft Asset.Paths[Lookup No Match Output]"
-          TopLeft="474.28,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-252.635555555556,48.35"
-              Start="0,0"
-              End="-252.635555555556,40.85">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5848101265823" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5848101265823"
-                    Point2="0,19.5848101265823"
-                    Point3="-4,19.5848101265823" />
-                  <mssgle:LineSegment
-                    End="-248.635555555556,19.5848101265823" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-248.635555555556,19.5848101265823"
-                    Point2="-252.635555555556,19.5848101265823"
-                    Point3="-252.635555555556,23.5848101265823" />
-                  <mssgle:LineSegment
-                    End="-252.635555555556,40.85" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-182.124164496528,24.5848101265823,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\dft Asset.Paths[Lookup No Match Output1]"
-          TopLeft="504.28,343.45">
+          Id="Package\dft Asset.Paths[Data Conversion Output]"
+          TopLeft="504.28,163.55">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3602,9 +3218,33 @@ WHERE Id = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,14.6203125,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\dft Asset\Salesforce Source"
+          TopLeft="429,31" />
+        <EdgeLayout
+          Id="Package\dft Asset.Paths[Salesforce Source Output]"
+          TopLeft="507.04,72.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.35"
+              Start="0,0"
+              End="0,41.85">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.85" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3675,10 +3315,6 @@ WHERE Id = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\dft Configuration_c\Salesforce Source"
-          TopLeft="514.36,37" />
-        <NodeLayout
           Size="155.2,41.6"
           Id="Package\dft Configuration_c\Data Conversion"
           TopLeft="517.56,134.25" />
@@ -3691,12 +3327,16 @@ WHERE Id = ?</property>
           Id="Package\dft Configuration_c\Check for Changes to Records"
           TopLeft="485.16,328.75" />
         <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\dft Configuration_c\INSERT"
+          TopLeft="225,328.75" />
+        <NodeLayout
           Size="116.8,41.6"
           Id="Package\dft Configuration_c\UPDATE"
           TopLeft="536.76,426" />
         <EdgeLayout
-          Id="Package\dft Configuration_c.Paths[Salesforce Source Output]"
-          TopLeft="595.16,78.6">
+          Id="Package\dft Configuration_c.Paths[Lookup No Match Output1]"
+          TopLeft="595.16,370.35">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3713,35 +3353,11 @@ WHERE Id = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,18.2703125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\dft Configuration_c.Paths[Data Conversion Output]"
-          TopLeft="595.16,175.85">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55.65"
-              Start="0,0"
-              End="0,48.15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="114.4,41.6"
-          Id="Package\dft Configuration_c\INSERT"
-          TopLeft="225,328.75" />
         <EdgeLayout
           Id="Package\dft Configuration_c.Paths[Lookup No Match Output]"
           TopLeft="565.16,273.1">
@@ -3815,8 +3431,8 @@ WHERE Id = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\dft Configuration_c.Paths[Lookup No Match Output1]"
-          TopLeft="595.16,370.35">
+          Id="Package\dft Configuration_c.Paths[Data Conversion Output]"
+          TopLeft="595.16,175.85">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3833,9 +3449,33 @@ WHERE Id = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,18.2703125,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\dft Configuration_c\Salesforce Source"
+          TopLeft="518,36.4" />
+        <EdgeLayout
+          Id="Package\dft Configuration_c.Paths[Salesforce Source Output]"
+          TopLeft="596.98,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.25"
+              Start="0,0"
+              End="0,48.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
